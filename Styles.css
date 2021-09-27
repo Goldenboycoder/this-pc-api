@@ -1,0 +1,9 @@
+p {
+    font-family: 'Courier New', Courier, monospace;
+}
+.pure-g > div {
+    box-sizing: border-box;
+}
+.l-box{
+    padding: 1em;
+}
