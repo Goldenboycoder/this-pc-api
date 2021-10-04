@@ -4,6 +4,9 @@ from fastapi.responses import HTMLResponse
 import ComputerStats
 import DynamicHtml
 from enum import Enum
+import uvicorn
+import config
+
 
 class CompStats(str,Enum):
     cpu = "cpu"
@@ -94,6 +97,24 @@ def read_nics(nic: str = "all"):
 def read_users():
     return {"users" : ComputerStats.getCurrentUsers()}
 
-@app.get("/compstats/{compstat}")
-def read_item(compstat: CompStats, q: Optional[str] = None):
-    return {"item_id": compstat, "q": q}
+
+@app.on_event("startup")
+def onStartup_event():
+    '''
+    This runs on startup before anything else
+    '''
+    print("Starting ThisPcApi ...")
+
+@app.on_event("shutdown")
+def onShutdown_event():
+    '''
+    This runs on shutdown last
+    '''
+    print("Shutting down ThisPcApi")
+
+
+def main():
+    uvicorn.run("main:app", reload = config.uvicornReload, port = config.uviconrPort)
+
+if __name__ == "__main__":
+    main()
