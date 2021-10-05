@@ -8,6 +8,7 @@ import uvicorn
 import config
 
 
+
 class CompStats(str,Enum):
     cpu = "cpu"
     network = "network"
@@ -114,6 +115,10 @@ def onShutdown_event():
 
 
 def main():
+    '''
+    cmd : gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
+    to run with process manager
+    '''
     uvicorn.run("main:app", reload = config.uvicornReload, port = config.uviconrPort)
 
 if __name__ == "__main__":
