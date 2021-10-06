@@ -4,9 +4,6 @@ from fastapi.responses import HTMLResponse
 import ComputerStats
 import DynamicHtml
 from enum import Enum
-import uvicorn
-import config
-
 
 
 class CompStats(str,Enum):
@@ -112,14 +109,3 @@ def onShutdown_event():
     This runs on shutdown last
     '''
     print("Shutting down ThisPcApi")
-
-
-def main():
-    '''
-    cmd : gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
-    to run with process manager
-    '''
-    uvicorn.run("main:app", reload = config.uvicornReload, port = config.uviconrPort)
-
-if __name__ == "__main__":
-    main()

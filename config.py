@@ -3,5 +3,6 @@
 
 isCpuMonitored = False
 #----------------------------Server Vars-----------------------------------------
-uviconrPort = 5555
+serverIP = "localhost"
+serverPort = 5555
 uvicornReload = True
