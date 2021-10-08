@@ -7,6 +7,7 @@ from socket import AF_INET
 from socket import AF_INET6
 from psutil import AF_LINK
 import config
+import platform
 #==========================VARS==========================
 
 loads = psutil.getloadavg()
@@ -192,3 +193,5 @@ def getWinServices():
     return services
     
     
+def getPcName():
+    return platform.node()

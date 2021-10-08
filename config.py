@@ -6,3 +6,7 @@ isCpuMonitored = False
 serverIP = "localhost"
 serverPort = 5555
 uvicornReload = True
+
+#-------------------------------Cache Vars------------------------------
+CacheHost = "192.168.1.22"
+CachePort = 6379
