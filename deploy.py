@@ -2,6 +2,7 @@ import config as Settings
 import sys , getopt
 import uvicorn
 import os
+
 def main(argv):
     '''
     cmd : gunicorn -w 4 -k uvicorn.workers.UvicornWorker main:app
@@ -26,6 +27,8 @@ def main(argv):
     else:
         print("deploy.py -m <gunicorn/uvicorn>")
         sys.exit()
+
+
 if __name__ == "__main__":
     main(sys.argv[1:])
 

@@ -64,16 +64,15 @@ def getCPULoad():
         config.isCpuMonitored = True
         loads = psutil.getloadavg()
 
-    if loads[0] != 0.0 or loads[1] != 0.0 or loads[2] != 0.0:
-        logicalCPUs = getNumberOfCPUA(logical=True)
-        percentages = [float(format(x / logicalCPUs *100,'.2f')) for x in loads]
-        results = {
-            "min1":percentages[0],
-            "min5":percentages[1],
-            "min15":percentages[2]}
-        return results
-    else:
-        return "collecting stats"
+    
+    logicalCPUs = getNumberOfCPUA(logical=True)
+    percentages = [float(format(x / logicalCPUs *100,'.2f')) for x in loads]
+    results = {
+        "min1":percentages[0],
+        "min5":percentages[1],
+        "min15":percentages[2]}
+    return results
+    
 
 
 #------------------------Memory-----------------------------
