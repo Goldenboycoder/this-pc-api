@@ -14,3 +14,6 @@ CachePort = 6379
 #-------------------------------Settings---------------------------
 produce = True
 broadcastFrequency = 120 #seconds
+
+#---------------------------Threads---------------------
+producerThread = ''

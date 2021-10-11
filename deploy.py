@@ -2,6 +2,8 @@ import config as Settings
 import sys , getopt
 import uvicorn
 import os
+from producer import Producer
+import threading
 
 def main(argv):
     '''
@@ -30,5 +32,7 @@ def main(argv):
 
 
 if __name__ == "__main__":
+    prod = Producer()
+    Settings.producerThread = threading.Thread(target=prod.startProducing,daemon=True)
     main(sys.argv[1:])
 

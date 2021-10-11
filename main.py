@@ -4,7 +4,7 @@ from fastapi.responses import HTMLResponse
 import ComputerStats
 import DynamicHtml
 from enum import Enum
-
+import config
 
 class CompStats(str,Enum):
     cpu = "cpu"
@@ -109,3 +109,5 @@ def onShutdown_event():
     This runs on shutdown last
     '''
     print("Shutting down ThisPcApi")
+    config.produce = False
+    config.producerThread.join()
