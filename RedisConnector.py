@@ -20,7 +20,7 @@ class RedisConnection:
         disks = ComputerStats.getDiskPartitions()
         for disk in disks:
             pcCapacity.append("disk-cap:"+disk)
-            pcCapacity.append(disk["total"])
+            pcCapacity.append(disks[disk]["total"])
         
         totalMemory = ComputerStats.getMemoryStats()["total"]
         pcCapacity.append("memory")
