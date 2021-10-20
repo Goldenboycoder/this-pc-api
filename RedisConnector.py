@@ -16,15 +16,13 @@ class RedisConnection:
         self.saveCapacity()
 
     def saveCapacity(self):
-        pcCapacity = []
+        pcCapacity = {}
         disks = ComputerStats.getDiskPartitions()
         for disk in disks:
-            pcCapacity.append("disk-cap:"+disk)
-            pcCapacity.append(disks[disk]["total"])
+            pcCapacity["disk-cap:"+disk]=disks[disk]["total"]
         
         totalMemory = ComputerStats.getMemoryStats()["total"]
-        pcCapacity.append("memory")
-        pcCapacity.append(totalMemory)
+        pcCapacity["memory"]=totalMemory
 
         self.cache.hmset(name= self.pcName, mapping= pcCapacity)
 
