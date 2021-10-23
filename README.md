@@ -1,6 +1,8 @@
 
 # ThisPc-API
 
+![python --version](https://img.shields.io/badge/python-3.6%7C3.7%7C3.8-green)
+
 ThisPc-Api is a Redis publisher, and an API endpoint used in [ThisPc project](https://github.com/Goldenboycoder/this-pc-project), to deliver performance and system resources data about this pc.
 ## Appendix
 [ThisPC-Project](https://github.com/Goldenboycoder/this-pc-project)
