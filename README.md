@@ -73,6 +73,7 @@ You will see the alternative automatic documentation (provided by [ReDoc](https:
 ## Author
 
 - [@Patrick Balian](https://github.com/Goldenboycoder)
+
 [![twitter](https://img.shields.io/twitter/follow/patrick_balian?style=social)](https://twitter.com/Patrick_Balian)
 
 [![linkedin](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/patrick-balian-41b851147/)
