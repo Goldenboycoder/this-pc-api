@@ -65,6 +65,11 @@ You will see the alternative automatic documentation (provided by [ReDoc](https:
 *N.B: Port number may be different if you changed it.*
 
   
+## License
+
+[BSD 3-Clause License](./LICENSE)
+
+  
 ## Author
 
 - [@Patrick Balian](https://github.com/Goldenboycoder)
